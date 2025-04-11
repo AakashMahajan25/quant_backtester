@@ -11,12 +11,11 @@ class MarketEvent(Event):
 
 
 class SignalEvent(Event):
-    def __init__(self, time, symbol, signal_type, strength):
+    def __init__(self, symbol, signal_type, time=None):
         self.type = "SIGNAL"
-        self.time = time
         self.symbol = symbol
-        self.signal_type = signal_type
-        self.strength = strength
+        self.signal_type = signal_type # 'LONG' or 'EXIT'
+        self.time = time
 
 
 class OrderEvent(Event):
